@@ -1,6 +1,16 @@
 // TODO: write your code here
-import sum from './basic';
 
 console.log('worked');
 
-console.log(sum([1, 2]));
+export default function getSpecialAttaks (char) {
+  const attacksList = []
+
+  const { special } = char
+  for (const attackIndex in special) {
+    const {id, name, icon, description = 'Описание недоступно'} = special[attackIndex];
+    attacksList.push({id: id, name: name, icon: icon, description: description});
+  }
+
+  console.log(attacksList)
+  return attacksList;
+}
